@@ -8,7 +8,6 @@ const BookDetails = () => {
   const data = useLoaderData();
   const singleBook = data.find((book) => book.bookId === parseInt(id));
   const {
-    bookId,
     bookName,
     author,
     publisher,
@@ -22,17 +21,16 @@ const BookDetails = () => {
   } = singleBook;
   const [tags0, tags1] = tags;
 
-  const handleMarkAsRead = id =>{
+  const handleMarkAsRead = (id) => {
     //store with ID
     //Where to store
     // array or cullection
     //how to avoid duplication
     //if the book not exist in the DB, add to DB
     addToStoreDB(id);
-
-  }
+  };
   return (
-    <div className="w-[90%] mx-auto gap-8 items-stretch flex flex-col lg:flex-row gap-8 items-stretch">
+    <div className="w-[90%] mx-auto flex flex-col lg:flex-row gap-8 items-stretch">
       <div
         className="border-0 rounded-xl p-8 
           bg-[#1313130d] w-full shadow-sm flex justify-center items-center"
@@ -57,7 +55,7 @@ const BookDetails = () => {
         <hr className="border border-[#131313]/15" />
         <p>
           <b>Review: </b>
-          <span className="font-medium text-[#131313B3] leading-[0px] font-[400] text-left text-sm">
+          <span className="font-normal text-[#131313B3] leading-0 text-left text-sm">
             {review}
           </span>
         </p>
@@ -106,7 +104,10 @@ const BookDetails = () => {
           </p>
         </div>
         <div className="flex flex-row gap-4 mt-1">
-          <button onClick={() => handleMarkAsRead(id)} className="btn bg-[#ffffff] text-[#131313] border-0 shadow-2">
+          <button
+            onClick={() => handleMarkAsRead(id)}
+            className="btn bg-[#ffffff] text-[#131313] border-0 shadow-2"
+          >
             Read
           </button>
           <button className="btn bg-[#50B1C9] text-[#FFFFFF] border-0 shadow-2">

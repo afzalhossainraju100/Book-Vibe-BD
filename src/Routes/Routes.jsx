@@ -5,6 +5,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage.jsx";
 import Home from "../Pages/Home/Home.jsx";
 import About from "../Pages/About/About.jsx";
 import BookDetails from "../Pages/BookDetails/BookDetails.jsx";
+import ReadList from "../Pages/ReadList/ReadList.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       {
         path: '/about',
         Component: About,
+      },
+      {
+        path: '/readList',
+        Component: ReadList,
       },
       {
         path: '/bookDetails/:id',
