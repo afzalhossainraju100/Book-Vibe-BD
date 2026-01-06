@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useLoaderData } from "react-router";
+import { addToStoreDB } from "../../Utility/AddToDB";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -20,8 +21,18 @@ const BookDetails = () => {
     yearOfPublishing,
   } = singleBook;
   const [tags0, tags1] = tags;
+
+  const handleMarkAsRead = id =>{
+    //store with ID
+    //Where to store
+    // array or cullection
+    //how to avoid duplication
+    //if the book not exist in the DB, add to DB
+    addToStoreDB(id);
+
+  }
   return (
-    <div className="w-[90%] mx-auto flex flex-row gap-8 items-stretch">
+    <div className="w-[90%] mx-auto gap-8 items-stretch flex flex-col lg:flex-row gap-8 items-stretch">
       <div
         className="border-0 rounded-xl p-8 
           bg-[#1313130d] w-full shadow-sm flex justify-center items-center"
@@ -95,7 +106,7 @@ const BookDetails = () => {
           </p>
         </div>
         <div className="flex flex-row gap-4 mt-1">
-          <button className="btn bg-[#ffffff] text-[#131313] border-0 shadow-2">
+          <button onClick={() => handleMarkAsRead(id)} className="btn bg-[#ffffff] text-[#131313] border-0 shadow-2">
             Read
           </button>
           <button className="btn bg-[#50B1C9] text-[#FFFFFF] border-0 shadow-2">

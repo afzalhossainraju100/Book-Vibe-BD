@@ -3,7 +3,7 @@ import bannerImage from "../../assets/books.jpg";
 
 const Banner = () => {
   return (
-    <div className="banner flex justify-between items-center bg-[#F3F3F3] rounded-lg p-16 mx-4 mt-8 w-[90%] mx-auto mb-8">
+    <div className="banner flex flex-col-reverse md:flex-row gap-8  justify-between items-center bg-[#F3F3F3] rounded-lg p-16  mt-8 w-[90%] mx-auto mb-8">
       <div className="flex flex-col gap-10">
         <h1 className="text-[3.5rem]">
           Books to freshen <br /> up your bookshelf
