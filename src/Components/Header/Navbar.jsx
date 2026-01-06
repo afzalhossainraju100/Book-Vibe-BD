@@ -58,8 +58,8 @@
             </ul>
           </div>
           <div className="navbar-end flex gap-4">
-            <a className="btn bg-[#23BE0A] ">Sign In</a>
-            <a className="btn bg-[#59C6D2]">Sign Up</a>
+            <a className="btn border-0 bg-[#23BE0A] ">Sign In</a>
+            <a className="btn border-0 bg-[#59C6D2]">Sign Up</a>
           </div>
         </div>
       </div>
