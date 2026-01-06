@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Roots from "../Pages/Roots/Roots.jsx";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage.jsx";
 import Home from "../Pages/Home/Home.jsx";
+import About from "../Pages/About/About.jsx";
+import BookDetails from "../Pages/BookDetails/BookDetails.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +18,14 @@ export const router = createBrowserRouter([
         path: "/",
         Component: Home,
       },
+      {
+        path: '/about',
+        Component: About,
+      },
+      {
+        path: '/bookDetails/:id',
+        Component: BookDetails,
+      }
     ],
   },
 ]);

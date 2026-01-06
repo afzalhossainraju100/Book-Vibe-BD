@@ -1,5 +1,6 @@
 import React from "react";
 import Frame1 from "../../assets/Frame1.png";
+import { Link } from "react-router";
 
 const Book = ({ singleBook }) => {
   // console.log(allBooks);
@@ -9,7 +10,7 @@ const Book = ({ singleBook }) => {
   const [tags0, tags1] = tags;
 
   return (
-    <div className="h-full">
+      <div className="h-full">
       <div className="card bg-[#ffffff] w-full shadow-sm rounded-2xl h-full flex flex-col">
         <div className="card-body p-6 pb-0">
           <figure className="bg-[#f3f3f3] rounded-2xl p-4 flex justify-center items-center mb-1 h-64">
