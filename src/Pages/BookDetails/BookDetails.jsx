@@ -2,6 +2,11 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useLoaderData } from "react-router";
 import { addToStoreDB } from "../../Utility/AddToDB";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import { ToastContainer, toast } from 'react-toastify';
+
+  const MySwal = withReactContent(Swal);
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -27,6 +32,15 @@ const BookDetails = () => {
     // array or cullection
     //how to avoid duplication
     //if the book not exist in the DB, add to DB
+    MySwal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Your work has been saved",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    toast("Wow so easy!");
+
     addToStoreDB(id);
   };
   return (
@@ -103,6 +117,7 @@ const BookDetails = () => {
             </span>
           </p>
         </div>
+        <ToastContainer />
         <div className="flex flex-row gap-4 mt-1">
           <button
             onClick={() => handleMarkAsRead(id)}
