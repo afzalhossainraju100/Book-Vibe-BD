@@ -5,16 +5,16 @@ const Navbar = () => {
   const links = (
     <>
       <Link to='/'><li className="m-2">
-        <a>Home</a>
+        Home
       </li></Link>
       <Link to='/listed-books'><li className="m-2">
-        <a>Listed Books</a>
+       Listed Books
       </li></Link>
-      <Link to='/'><li className="m-2">
-        <a>Pages to Read</a>
+      <Link to='/pages-to-read'><li className="m-2">
+        Pages to Read
       </li></Link>
       <Link to='/about'><li className="m-2">
-        <a>About</a>
+        About
       </li></Link>
     </>
   );
